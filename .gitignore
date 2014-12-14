@@ -13,6 +13,9 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+.settings
+.classpath
+target
 
 # =========================
 # Operating System Files
@@ -41,3 +44,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*.prefs
+*.project
+*.jsdtscope
+*.component
+*.component

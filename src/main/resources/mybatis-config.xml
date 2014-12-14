@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GBK" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">  
+
+<!-- 配置要遵循的顺序 The content of element type "configuration" must match 
+ "(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,
+ objectWrapperFactory?,plugins?,environments?,databaseIdProvider?,mappers?)". -->
+<configuration>  
+
+	<!-- 配置mybatis的一些属性 -->
+    <settings>
+ 		<setting name="cacheEnabled" value="true"/>
+ 	 	<setting name="lazyLoadingEnabled" value="true"/>
+  		<setting name="multipleResultSetsEnabled" value="true"/>
+ 	 	<setting name="useColumnLabel" value="true"/>
+  		<setting name="useGeneratedKeys" value="false"/>
+  		<setting name="autoMappingBehavior" value="PARTIAL"/>
+ 		<setting name="defaultExecutorType" value="SIMPLE"/>
+ 		<setting name="defaultStatementTimeout" value="25"/>
+ 		<setting name="safeRowBoundsEnabled" value="false"/>
+ 		<setting name="mapUnderscoreToCamelCase" value="false"/>
+ 		<setting name="localCacheScope" value="SESSION"/>
+ 		<setting name="jdbcTypeForNull" value="OTHER"/>
+ 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+	</settings>
+	
+	<!-- 扫描指定包下面JavaBean，例如会将User.java这个映射成user，在映射的xml文件中使用的时候直接使用user即可 -->
+	<!-- 如果不写别名，就要在xml文件中指定类的全限定名称 -->
+	<typeAliases>  
+        <package name="husd.wsi"/>
+    </typeAliases>
+	
+	<!-- 这个配置在单独使用mybatis的时候生效，在mybatis-spring中会失效 -->
+    <environments default="development">
+		<environment id="development">
+		<!-- 如果使用spring-mybatis，这个事务管理器会失效 -->
+		<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+			<property name="driver" value="com.mysql.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql://127.0.0.1:3306/husd" />
+			<property name="username" value="root"/>
+			<property name="password" value="root"/>
+			<!-- 默认的连接事务隔离级别 -->
+			<property name="defaultTransactionIsolationLevel" value="1"/>
+			<property name="poolMaximumActiveConnections" value="10"/>
+			</dataSource>
+		</environment>
+	</environments>  
+	
+	<!-- 映射文件配置 -->
+	<mappers>  
+        <mapper resource="husd/wsi/back/dao/user/UserDao.xml" />  
+    </mappers> 
+</configuration>
