@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="husd.wsi.dao.UserMapper">
+
+	<resultMap id="UserResultMap" type="user">
+		<result column="username" property="username" />
+		<result column="password" property="password" />
+		<result column="email" property="email" />
+	</resultMap>
+
+	<select id="verifyUserExistOrNot" resultMap="UserResultMap" parameterType="java.lang.String" >
+		select username,password,email
+		from user
+		where username = #{username}
+	</select>
+
+	<select id="findByUsernameAndPassword" parameterType="java.util.HashMap" resultMap="UserResultMap">
+		select
+		username,password,email
+		from user
+		where username = #{username}
+		and password = #{password}
+	</select>
+
+	<insert id="save" parameterType="java.util.HashMap">
+		insert into user (username,password,email)
+		values (
+				#{username},
+				#{password},
+				#{email}
+		)
+	</insert>
+
+	<select id="findAllUsers" resultMap="UserResultMap">
+		select * from user
+	</select>
+
+</mapper>
+
+

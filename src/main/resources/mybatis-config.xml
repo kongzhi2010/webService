@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="GBK" ?>  
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-config.dtd">  
 
-<!-- ÅäÖÃÒª×ñÑ­µÄË³Ðò The content of element type "configuration" must match 
+<!-- é…ç½®è¦éµå¾ªçš„é¡ºåº The content of element type "configuration" must match 
  "(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,
  objectWrapperFactory?,plugins?,environments?,databaseIdProvider?,mappers?)". -->
 <configuration>  
 
-	<!-- ÅäÖÃmybatisµÄÒ»Ð©ÊôÐÔ -->
+	<!-- é…ç½®mybatisçš„ä¸€äº›å±žæ€§ -->
     <settings>
  		<setting name="cacheEnabled" value="true"/>
  	 	<setting name="lazyLoadingEnabled" value="true"/>
@@ -24,31 +24,28 @@
  		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
 	</settings>
 	
-	<!-- É¨ÃèÖ¸¶¨°üÏÂÃæJavaBean£¬ÀýÈç»á½«User.javaÕâ¸öÓ³Éä³Éuser£¬ÔÚÓ³ÉäµÄxmlÎÄ¼þÖÐÊ¹ÓÃµÄÊ±ºòÖ±½ÓÊ¹ÓÃuser¼´¿É -->
-	<!-- Èç¹û²»Ð´±ðÃû£¬¾ÍÒªÔÚxmlÎÄ¼þÖÐÖ¸¶¨ÀàµÄÈ«ÏÞ¶¨Ãû³Æ -->
-	<typeAliases>  
-        <package name="husd.wsi"/>
-    </typeAliases>
+	<!-- æ‰«ææŒ‡å®šåŒ…ä¸‹é¢JavaBeanï¼Œä¾‹å¦‚ä¼šå°†User.javaè¿™ä¸ªæ˜ å°„æˆuserï¼Œåœ¨æ˜ å°„çš„xmlæ–‡ä»¶ä¸­ä½¿ç”¨çš„æ—¶å€™ç›´æŽ¥ä½¿ç”¨userå³å¯ -->
+	<!-- å¦‚æžœä¸å†™åˆ«åï¼Œå°±è¦åœ¨xmlæ–‡ä»¶ä¸­æŒ‡å®šç±»çš„å…¨é™å®šåç§° -->
+	<!--<typeAliases>
+        <package name="husd.wsi.pojo"/>
+    </typeAliases>-->
 	
-	<!-- Õâ¸öÅäÖÃÔÚµ¥¶ÀÊ¹ÓÃmybatisµÄÊ±ºòÉúÐ§£¬ÔÚmybatis-springÖÐ»áÊ§Ð§ -->
+	<!-- è¿™ä¸ªé…ç½®åœ¨å•ç‹¬ä½¿ç”¨mybatisçš„æ—¶å€™ç”Ÿæ•ˆï¼Œåœ¨mybatis-springä¸­ä¼šå¤±æ•ˆ -->
     <environments default="development">
 		<environment id="development">
-		<!-- Èç¹ûÊ¹ÓÃspring-mybatis£¬Õâ¸öÊÂÎñ¹ÜÀíÆ÷»áÊ§Ð§ -->
+		<!-- å¦‚æžœä½¿ç”¨spring-mybatisï¼Œè¿™ä¸ªäº‹åŠ¡ç®¡ç†å™¨ä¼šå¤±æ•ˆ -->
 		<transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
 			<property name="driver" value="com.mysql.jdbc.Driver"/>
 			<property name="url" value="jdbc:mysql://127.0.0.1:3306/husd" />
 			<property name="username" value="root"/>
 			<property name="password" value="root"/>
-			<!-- Ä¬ÈÏµÄÁ¬½ÓÊÂÎñ¸ôÀë¼¶±ð -->
+			<!-- é»˜è®¤çš„è¿žæŽ¥äº‹åŠ¡éš”ç¦»çº§åˆ« -->
 			<property name="defaultTransactionIsolationLevel" value="1"/>
 			<property name="poolMaximumActiveConnections" value="10"/>
 			</dataSource>
 		</environment>
 	</environments>  
 	
-	<!-- Ó³ÉäÎÄ¼þÅäÖÃ -->
-	<mappers>  
-        <mapper resource="husd/wsi/back/dao/user/UserDao.xml" />  
-    </mappers> 
+	<!-- æ˜ å°„æ–‡ä»¶é…ç½® -->
 </configuration>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="GBK"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:camel="http://camel.apache.org/schema/spring"
 	xsi:schemaLocation="
@@ -7,12 +7,13 @@
    http://camel.apache.org/schema/spring 
    http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-	<camelContext xmlns="http://camel.apache.org/schema/spring">
-		<camel:threadPool id="serviceThreadPool" maxPoolSize="15" poolSize="5" threadName="serviceThreadPool" />
+	<camelContext xmlns="http://camel.apache.org/schema/spring" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				  xsi:schemaLocation="http://camel.apache.org/schema/spring ">
+		<camel:threadPool id="serviceThreadPool" maxPoolSize="15" poolSize="5" threadName="serviceThreadPool"/>
 		<route>
-			<from uri="jms:queue:husd.wsi.bank.service" />
+			<from uri="jms:queue:husd.wsi.service"/>
 			<camel:threads executorServiceRef="serviceThreadPool">
-				<to uri="bean:demoService?method=onMessage" />
+				<to uri="bean:demoService?method=onMessage"/>
 			</camel:threads>
 		</route>
 	</camelContext>

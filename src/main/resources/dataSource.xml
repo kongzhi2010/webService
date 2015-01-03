@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="GBK"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-	<!-- Ïà¹ØÊý¾ÝÔ´ºÍÊÂÎñ¹ÜÀíµÄ¶¨Òå ¶¨ÒåÁ¬½Ó³Ø -->
+	<!-- ç›¸å…³æ•°æ®æºå’Œäº‹åŠ¡ç®¡ç†çš„å®šä¹‰ å®šä¹‰è¿žæŽ¥æ±  -->
 	<bean id="dataSource1" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
 		<property name="driver" value="${mysql.driver}" />
 		<property name="url" value="${mysql.url}" />
@@ -19,11 +19,11 @@
 		<property name="maxPoolSize" value="${c3p0.max_pool_size}" />
 		<property name="initialPoolSize" value="${c3p0.init_pool_size}" />
 		<property name="maxIdleTime" value="${c3p0.max_idle_time}" /> 
-		<!--µ±Á¬½Ó³ØÖÐµÄÁ¬½ÓºÄ¾¡µÄÊ±ºòc3p0Ò»´ÎÍ¬Ê±»ñÈ¡µÄÁ¬½ÓÊý¡£Default: 3 --> 
+		<!--å½“è¿žæŽ¥æ± ä¸­çš„è¿žæŽ¥è€—å°½çš„æ—¶å€™c3p0ä¸€æ¬¡åŒæ—¶èŽ·å–çš„è¿žæŽ¥æ•°ã€‚Default: 3 --> 
         <property name="acquireIncrement" value="${c3p0.acquire_increment}" />
 		<property name="unreturnedConnectionTimeout" value="${c3p0.timeout}" />
 		<property name="idleConnectionTestPeriod" value="${c3p0.idle_test_period}" />
 		<property name="maxStatements" value="${c3p0.max_statements}" />
-		<property name="automaticTestTable" value="${c3p0.automatic_test_table}" />
+		<!--<property name="automaticTestTable" value="${c3p0.automatic_test_table}" />-->
 	</bean>
 </beans>
