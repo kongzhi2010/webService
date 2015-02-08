@@ -18,9 +18,8 @@ public class InitWeiXin {
     @Resource
     private WeiXinSendMessageService weiXinSendMessageService;
 
-    @PostConstruct
     public void send0() {
         logger.info("send0.........");
-        weiXinSendMessageService.sendTextMessage("@all", "2", "33", "1", true, "nihaoya qiyehao", true);
+        weiXinSendMessageService.sendTextMessage("@all", "2", "33", 1, "系统报警短信:请立即检查(这是一条测试信息)", true);
     }
 }
