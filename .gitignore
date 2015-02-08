@@ -16,6 +16,7 @@ $RECYCLE.BIN/
 .settings
 .classpath
 target
+idea
 
 # =========================
 # Operating System Files
@@ -29,7 +30,8 @@ target
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -54,3 +56,4 @@ Temporary Items
 *.name
 .idea/compiler.xml
 .idea/copyright/profiles_settings.xml
+.idea
