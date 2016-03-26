@@ -20,30 +20,7 @@
         </property>
     </bean>
 
-    <import resource="classpath:task-schedule.xml"/>
-
     <import resource="classpath:spring-aop.xml"/>
-
-    <import resource="classpath:dataSource.xml"/>
-
-    <!-- myibatis -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="husd.wsi.pojo"/>
-        <!--<property name="mapperLocations" value="classpath*:husd/wsi/dao/*Mapper.xml" />-->
-    </bean>
-
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="husd.wsi.dao"/>
-    </bean>
-
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory"/>
-    </bean>
-
-    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
 
     <mvc:resources mapping="/views/scripts/**" location="/WEB-INF/views/scripts/"/>
 
@@ -53,23 +30,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="defaultErrorView" value="error"></property>
         <property name="exceptionAttribute" value="ex"></property>
-    </bean>
-
-    <bean id="javaMailSenderImpl" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-        <property name="host" value="${spring.mail.host}"/>
-        <property name="port" value="${spring.mail.port}"/>
-        <property name="username" value="${spring.mail.username}"/>
-        <property name="password" value="${spring.mail.password}"/>
-        <property name="defaultEncoding" value="${spring.mail.defaultEncoding}"/>
-    </bean>
-
-    <bean id="weiXinSecret" class="husd.wsi.common.WeiXinSecret">
-        <property name="corpid" value="${weixin.cor.corpid}"/>
-        <property name="corpsecret" value="${weixin.cor.corpsecret}"/>
     </bean>
 
 </beans>

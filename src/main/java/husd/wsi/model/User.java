@@ -1,4 +1,4 @@
-package husd.wsi.pojo;
+package husd.wsi.model;
 
 import java.io.Serializable;
 

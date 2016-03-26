@@ -1,5 +1,7 @@
 package husd.wsi.pojo;
 
+import husd.wsi.model.User;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

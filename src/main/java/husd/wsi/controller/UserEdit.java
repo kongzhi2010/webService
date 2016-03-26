@@ -1,18 +1,21 @@
 package husd.wsi.controller;
 
-import javax.annotation.Resource;
-import husd.wsi.pojo.User;
-
+import husd.wsi.model.User;
 import husd.wsi.service.UserService;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
-
-import java.util.List;
 
 @Controller
 public class UserEdit {
@@ -40,7 +43,6 @@ public class UserEdit {
                               @RequestParam String email,
                               RedirectAttributesModelMap modelMap) {
         User user = new User(username,password,email);
-        userService.saveUser(username, password, email);
         modelMap.addFlashAttribute("username", username);
         modelMap.addFlashAttribute("password",password);
         return new ModelAndView("redirect:/user/login");
