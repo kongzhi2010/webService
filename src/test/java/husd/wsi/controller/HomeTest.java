@@ -28,8 +28,6 @@ public class HomeTest {
 	public void testShowHomePage() {
 		Home home = new Home();
 		Map<String, Object> model = new HashMap<String, Object>();
-		String viewName = home.showHomePage(model);
-		assertEquals("home", viewName);
 		assertEquals("this is a demo", model.get("demo"));
 	}
 
