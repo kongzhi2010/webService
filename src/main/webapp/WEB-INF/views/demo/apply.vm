@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/static/css/demo.css">
+
+<div class="container" style="margin-top:50px">
+    <div class="panel panel-warning">
+        <div class="panel-heading" style="margin-bottom:35px;">
+            <div style="text-align: center;padding-bottom:2px;">查询商品详情</div>
+        </div>
+
+        <form id="conditions_form" class="form-horizontal" method="post">
+            <input id="start" name="start" type="hidden" value="$!condition.start"/>
+            <input id="pageSize" name="pageSize" type="hidden" value="$!condition.pageSize"/>
+
+            <div class="row from-group from-group-lg" style="margin-bottom:25px;">
+                <label class="col-xs-2 control-label" for="productId">商品编码:</label>
+
+                <div class="col-xs-3">
+                    <input class="form-control" type="input" name="productId" id="productId"
+                           value="$!condition.productId" placeholder="建议最多200个sku"/>
+                </div>
+            </div>
+
+            <div class="row form-group from-group-lg">
+                <label class="col-xs-2 control-label" for="batchCode">申请批次: </label>
+
+                <div class="col-xs-3">
+                    <input class="form-control" type="input" name="batchCode" id="batchCode"
+                           value="$!condition.batchCode" placeholder="请输入申请批次">
+                </div>
+                <div class="col-xs-2">
+                    <input type="button" name="查询" class="btn btn-primary btn-sm" id="search" value="查询"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="table-responsive">
+        <div style="height:37px;">
+            #parse("/common/pager.vm")
+        </div>
+        <table class="table table-striped table-bordered">
+            <thead style="text-align:center">
+            <th>申请批次</th>
+            <th>商品编码</th>
+            <th>当前状态</th>
+            <th>创建人员</th>
+            <th>创建时间</th>
+            </thead>
+            <tbody>
+                #if($null.isNull($pager.dataList) || $pager.dataList.size() == 0)
+                <tr colspan="5">
+                    <td> 没有结果</td>
+                </tr>
+                #else
+                    #foreach($d in $pager.dataList)
+                    <tr>
+                        <td>$d.batchCode</td>
+                        <td>$d.productId</td>
+                        #if($d.state == 1)
+                            <td style="color:green">有效</td>
+                        #else
+                            <td style="color:red">无效</td>
+                        #end
+                        <td>$d.person</td>
+                        <td>$d.time</td>
+                    </tr>
+                    #end
+                #end
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="/static/js/demo.js"></script>

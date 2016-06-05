@@ -1,7 +1,6 @@
-package husd.wsi.controller;
+package husd.web.demo.controller;
 
-import husd.wsi.model.User;
-
+import husd.web.demo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +19,10 @@ public class Home {
 		modelMap.addAttribute("arr",arr);
 		modelMap.addAttribute("user",user);
 		return "home";
+	}
+
+	@RequestMapping("/about")
+	public String about() {
+		return "about";
 	}
 }

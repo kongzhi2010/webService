@@ -1,9 +1,4 @@
-package husd.wsi.controller;
-
-import static org.junit.Assert.*;
-
-import java.util.HashMap;
-import java.util.Map;
+package husd.web.demo.controller;
 
 import org.junit.After;
 import org.junit.Before;
@@ -11,6 +6,11 @@ import org.junit.Test;
 import org.junit.internal.runners.JUnit4ClassRunner;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-mvc.xml")

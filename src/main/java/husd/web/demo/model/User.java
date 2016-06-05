@@ -1,4 +1,4 @@
-package husd.wsi.model;
+package husd.web.demo.model;
 
 import java.io.Serializable;
 

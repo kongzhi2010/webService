@@ -1,10 +1,9 @@
-package husd.wsi.pojo;
+package husd.web.demo.pojo;
 
-import husd.wsi.model.User;
-
+import husd.web.demo.model.User;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class UserTest {
 

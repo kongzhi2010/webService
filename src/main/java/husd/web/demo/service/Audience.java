@@ -1,4 +1,4 @@
-package husd.wsi.service;
+package husd.web.demo.service;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;

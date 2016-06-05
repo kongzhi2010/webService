@@ -15,7 +15,6 @@ $RECYCLE.BIN/
 *.msp
 .settings
 .classpath
-target
 idea
 
 # =========================
@@ -51,7 +50,7 @@ Temporary Items
 *.project
 *.jsdtscope
 *.component
-*.component
+target
 *.iml
 *.name
 .idea/compiler.xml
