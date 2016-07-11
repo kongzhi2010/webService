@@ -9,14 +9,14 @@ public class Audience {
 	private Logger logger = Logger.getLogger(Audience.class);
 
 	public void takeSeats() {
-		logger.info("takeSeats");
+//		logger.info("takeSeats");
 	}
 
 	public void turnOffCellPhone() {
-		logger.info("turnoff all cell phone");
+//		logger.info("turnoff all cell phone");
 	}
 
 	public void standUp() {
-		logger.info("stand up");
+//		logger.info("stand up");
 	}
 }

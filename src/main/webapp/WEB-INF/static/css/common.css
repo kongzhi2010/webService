@@ -222,7 +222,7 @@ body {
     font-size: 14px;
     line-height: 160%;
     color: #666;
-    background: url(img/bg.gif) repeat
+    background: url(bg.gif) repeat
 }
 
 body, input, button, select, textarea, h1, h2, h3, h4, h5, h6 {
@@ -4892,7 +4892,7 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 }
 
 body {
-    background: url(img/bg.gif) repeat !important
+    background: url(bg.gif) repeat !important
 }
 
 .aw-top-menu-wrap {
