@@ -4,7 +4,8 @@ import husd.web.model.DemoCondition;
 import husd.web.model.DemoResult;
 import husd.web.model.Pager;
 import husd.web.service.IDemoService;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.Random;
 @Service
 public class DemoService implements IDemoService {
 
-    private Logger logger = Logger.getLogger(DemoService.class);
+    private Logger logger = LoggerFactory.getLogger(DemoService.class);
 
     @Override
     public Pager<DemoResult> queryDemoResult(DemoCondition demoCondition) {
