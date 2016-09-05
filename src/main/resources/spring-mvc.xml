@@ -55,5 +55,5 @@
         <property name="exceptionAttribute" value="ex"></property>
     </bean>
 
-    <bean id="audience" class="husd.web.demo.service.Audience"/>
+    <bean id="audience" class="husd.web.service.Audience"/>
 </beans>

@@ -1,10 +1,11 @@
-package husd.web.demo.controller;
+package husd.web.controller;
 
-import husd.web.demo.model.DemoCondition;
-import husd.web.demo.model.DemoResult;
-import husd.web.demo.model.Pager;
-import husd.web.demo.service.IDemoService;
-import org.apache.log4j.Logger;
+import husd.web.model.DemoCondition;
+import husd.web.model.DemoResult;
+import husd.web.model.Pager;
+import husd.web.service.IDemoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class DemoController {
 
-    private Logger logger = Logger.getLogger(DemoController.class);
+    private Logger logger = LoggerFactory.getLogger(DemoController.class);
 
     @Autowired
     private IDemoService demoService;

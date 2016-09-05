@@ -1,12 +1,13 @@
-package husd.web.demo.service;
+package husd.web.service;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Audience {
 
-	private Logger logger = Logger.getLogger(Audience.class);
+	private Logger logger = LoggerFactory.getLogger(Audience.class);
 
 	public void takeSeats() {
 //		logger.info("takeSeats");

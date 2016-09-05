@@ -1,4 +1,4 @@
-package husd.web.demo.controller;
+package husd.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

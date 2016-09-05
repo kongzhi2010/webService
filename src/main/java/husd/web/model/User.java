@@ -1,4 +1,4 @@
-package husd.web.demo.model;
+package husd.web.model;
 
 import java.io.Serializable;
 

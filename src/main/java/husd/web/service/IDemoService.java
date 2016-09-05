@@ -1,8 +1,8 @@
-package husd.web.demo.service;
+package husd.web.service;
 
-import husd.web.demo.model.DemoCondition;
-import husd.web.demo.model.DemoResult;
-import husd.web.demo.model.Pager;
+import husd.web.model.DemoCondition;
+import husd.web.model.DemoResult;
+import husd.web.model.Pager;
 
 /**
  * Created by hushengdong on 16/6/3.

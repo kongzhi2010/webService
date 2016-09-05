@@ -1,4 +1,4 @@
-package husd.web.demo.controller;
+package husd.web.controller;
 
 import org.junit.After;
 import org.junit.Before;

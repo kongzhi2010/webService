@@ -1,6 +1,6 @@
-package husd.web.demo.controller;
+package husd.web.controller;
 
-import husd.web.demo.model.User;
+import husd.web.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;

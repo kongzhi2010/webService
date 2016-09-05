@@ -1,6 +1,6 @@
-package husd.web.demo.pojo;
+package husd.web.pojo;
 
-import husd.web.demo.model.User;
+import husd.web.model.User;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

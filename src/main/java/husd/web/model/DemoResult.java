@@ -1,4 +1,4 @@
-package husd.web.demo.model;
+package husd.web.model;
 
 /**
  * Created by hushengdong on 16/6/3.

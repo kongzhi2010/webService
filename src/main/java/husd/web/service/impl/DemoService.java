@@ -1,9 +1,9 @@
-package husd.web.demo.service.impl;
+package husd.web.service.impl;
 
-import husd.web.demo.model.DemoCondition;
-import husd.web.demo.model.DemoResult;
-import husd.web.demo.model.Pager;
-import husd.web.demo.service.IDemoService;
+import husd.web.model.DemoCondition;
+import husd.web.model.DemoResult;
+import husd.web.model.Pager;
+import husd.web.service.IDemoService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 

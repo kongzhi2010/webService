@@ -8,7 +8,7 @@
 
 	<aop:config>
 		<aop:aspect ref="audience">
-			<aop:pointcut id="audience-aop" expression="execution(* husd.web.demo.controller.Home.showHomePage(..))"/>
+			<aop:pointcut id="audience-aop" expression="execution(* husd.web.controller.Home.showHomePage(..))"/>
 			<aop:before pointcut-ref="audience-aop" method="takeSeats" />
 			<aop:before pointcut-ref="audience-aop" method="turnOffCellPhone" />
 			<aop:after-returning pointcut-ref="audience-aop" method="standUp" />
