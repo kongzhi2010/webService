@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>我的网站</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/common.css">
@@ -22,7 +23,7 @@
 <body>
 	#parse("/common/navbar-fixed.vm")
     $screen_content
-    #parse("/common/footer.vm")
+    #parse("/common/footer-fixed.vm")
 </body>
 
 <div id="commonConfirmModal" style="display:none" class="modal fade">

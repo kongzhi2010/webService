@@ -1,16 +1,17 @@
 package husd.web.service.impl;
 
-import husd.web.model.DemoCondition;
-import husd.web.model.DemoResult;
-import husd.web.model.Pager;
-import husd.web.service.IDemoService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import husd.web.model.DemoCondition;
+import husd.web.model.DemoResult;
+import husd.web.model.Pager;
+import husd.web.service.IDemoService;
 
 /**
  * Created by hushengdong on 16/6/3.
@@ -18,11 +19,11 @@ import java.util.Random;
 @Service
 public class DemoService implements IDemoService {
 
-    private Logger logger = LoggerFactory.getLogger(DemoService.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(DemoService.class);
 
     @Override
     public Pager<DemoResult> queryDemoResult(DemoCondition demoCondition) {
-        //1 先把总页数查询出来,然后做分页查询,注意total为0的情况.
+        // 1 先把总页数查询出来,然后做分页查询,注意total为0的情况.
         int total = queryTotalCount(demoCondition);
         if (total == 0) {
             return new Pager<DemoResult>();

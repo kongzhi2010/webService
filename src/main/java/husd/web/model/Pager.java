@@ -24,8 +24,7 @@ public class Pager<T> {
     private int navigatePages = 8; // 导航页码数
     private int[] navigatePageNumbers; // 所有导航页号
 
-    public Pager() {
-    }
+    public Pager() {}
 
     public Pager(int total, int pageNumber) {
         if (total >= 0) {

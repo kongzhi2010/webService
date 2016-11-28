@@ -3,11 +3,7 @@ package husd.web.model;
 /**
  * Created by hushengdong on 16/6/3.
  */
-public class DemoCondition {
-
-    private int start = 0;
-
-    private int pageSize = 20;
+public class DemoCondition extends BasePager {
 
     private String productId;
 
@@ -47,9 +43,7 @@ public class DemoCondition {
 
     @Override
     public String toString() {
-        return "DemoCondition{" +
-                "productId=" + productId +
-                ", batchCode='" + batchCode + '\'' +
-                '}';
+        return "DemoCondition{" + "productId=" + productId + ", batchCode='" + batchCode + '\''
+                + '}';
     }
 }

@@ -1,4 +1,4 @@
-<footer class="footer" style="padding-bootom:1px;margin-bootom:1px;bottom:5px;position:absolute;">
+<footer class="footer" style="padding-bootom:1px;margin-bootom:1px;">
     <div class="container">
         <div class="row footer-top">
             <div class="col-xm-6 col-lg-6">
@@ -47,31 +47,3 @@
 
     </div>
 </footer>
-</body>
-
-<div id="commonConfirmModal" style="display:none" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4>没有更多内容了</h4>
-            </div>
-            <div class="modal-body">
-                <span>想查看更多的内容吗? 请到github查看更多的内容吧 </span>
-                <a href="http://www.github.com/husd" target="_blank">点击跳转到GitHub</a>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="/static/js/jquery.min.js"></script>
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="/static/js/bootstrap.min.js"></script>
-</html>

@@ -3,11 +3,11 @@ package husd.web.model;
 /**
  * Created by hushengdong on 16/6/3.
  */
-abstract class BasePagerCondition {
+abstract class BasePager {
 
-    private int start;
+    protected int start = 0;
 
-    private int pageSize = 20;
+    protected int pageSize = 20;
 
     public int getPageSize() {
         return pageSize;
@@ -27,9 +27,6 @@ abstract class BasePagerCondition {
 
     @Override
     public String toString() {
-        return "BasePagerCondition{" +
-                "start=" + start +
-                ", pageSize=" + pageSize +
-                '}';
+        return "BasePagerCondition{" + "start=" + start + ", pageSize=" + pageSize + '}';
     }
 }

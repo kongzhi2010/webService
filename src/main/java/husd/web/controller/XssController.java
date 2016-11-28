@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by hushengdong on 16/7/9.
  */
 @Controller
-public class XssController {
+public class XssController extends BaseController {
 
     @RequestMapping("/demo/xss/check/user/input")
     public String xss(String p, ModelMap modelMap) {

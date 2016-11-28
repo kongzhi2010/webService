@@ -2,7 +2,7 @@ package husd.web.model;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+public class User implements Serializable {
 
     private String username;
 
@@ -10,7 +10,7 @@ public class User implements Serializable{
 
     private String email;
 
-    public User(){}
+    public User() {}
 
     public User(String username, String password, String email) {
         this.username = username;
@@ -44,7 +44,8 @@ public class User implements Serializable{
 
     @Override
     public String toString() {
-        return String.format("user detail is :username:%s,password:%s,email:%s", username, password, email);
+        return String.format("user detail is :username:%s,password:%s,email:%s", username, password,
+                email);
     }
 
 }
