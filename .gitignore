@@ -56,3 +56,5 @@ target
 .idea/compiler.xml
 .idea/copyright/profiles_settings.xml
 .idea
+jdbc.properties
+email.properties
