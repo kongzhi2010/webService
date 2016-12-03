@@ -21,6 +21,7 @@ import husd.framework.model.Constants;
 import husd.framework.model.CookieEnum;
 import husd.framework.model.LoginAuth;
 import husd.framework.util.CookieUtil;
+import husd.framework.util.HttpUtil;
 import husd.framework.util.Md5Util;
 import husd.web.dao.UserDao;
 import husd.web.model.User;
@@ -125,7 +126,7 @@ public class LoginServiceImpl implements ILoginService {
         BooleanMessage passwordCorrect = isPasswordCorrect(user, password);
         if (passwordCorrect.isSucc()) {
             // 登陆成功了之后写入登陆信息。
-            recordLoginInfo(user, response);
+            recordLoginInfo(user, request, response);
         }
         return passwordCorrect;
     }
@@ -134,6 +135,26 @@ public class LoginServiceImpl implements ILoginService {
     public boolean isLoginUrl(HttpServletRequest request) {
         String currentUrl = request.getRequestURI();
         return currentUrl != null && currentUrl.startsWith("login");
+    }
+
+    @Override
+    public LoginAuth getLoginAuthFromCookie(HttpServletRequest request) {
+        String json = CookieUtil.getCookieByName(request, CookieEnum.USER_NAME.getName());
+        if (StringUtils.isBlank(json)) {
+            return new LoginAuth();
+        }
+        LoginAuth loginAuth = gson.fromJson(json, LoginAuth.class);
+        if (loginAuth != null) {
+            String ip = HttpUtil.getIp(request);
+            loginAuth.setIp(ip);
+        }
+        return loginAuth;
+    }
+
+    @Override
+    public boolean logout(String username) {
+        cacheService.removeName(getLoginName(username));
+        return true;
     }
 
     private BooleanMessage isPasswordCorrect(User user, String password) {
@@ -161,13 +182,15 @@ public class LoginServiceImpl implements ILoginService {
         return userList.get(0);
     }
 
-    private void recordLoginInfo(User user, HttpServletResponse response) {
+    private void recordLoginInfo(User user, HttpServletRequest request,
+            HttpServletResponse response) {
         // 这个方法是登陆系统的关键，我们怎么标示这个用户已经登陆了，要防止别人窃取了cookie之后
         // 可以异地登陆用户的账号。
         String username = user.getUsername();
         String loginSeq = createLoginSeq(username, user.getSalt());
         String loginToken = createLoginToken(username, user.getSalt());
-        LoginAuth loginAuth = new LoginAuth(username, loginSeq, loginToken);
+        String ip = HttpUtil.getIp(request);
+        LoginAuth loginAuth = new LoginAuth(username, loginSeq, loginToken, ip);
         String json = loginAuth.toJson();
         putLoginAuthIntoCache(username, json);
         putLoginInfoIntoCookie(response, json);
@@ -181,14 +204,6 @@ public class LoginServiceImpl implements ILoginService {
     private void putLoginInfoIntoCookie(HttpServletResponse response, String json) {
         CookieUtil.setCookie(response, CookieEnum.USER_NAME.getName(), json,
                 Constants.LOING_EXPIRED_TIME);
-    }
-
-    private LoginAuth getLoginAuthFromCookie(HttpServletRequest request) {
-        String json = CookieUtil.getCookieByName(request, CookieEnum.USER_NAME.getName());
-        if (StringUtils.isBlank(json)) {
-            return new LoginAuth();
-        }
-        return gson.fromJson(json, LoginAuth.class);
     }
 
     private String createLoginToken(String username, String salt) {
@@ -208,34 +223,4 @@ public class LoginServiceImpl implements ILoginService {
         return username + "@" + CookieEnum.USER_NAME.getName();
     }
 
-    private String getLoginSeqName(String username) {
-        return username + "@" + CookieEnum.USER_LOGIN_SEQ.getName();
-    }
-
-    private String getLoginTokenName(String username) {
-        return username + "@" + CookieEnum.USER_LOGIN_TOKEN.getName();
-    }
-
-    private void updateLoginExpiredTime(String username) {
-        long currentTime = System.currentTimeMillis();
-        long exptectedExpiredTime = currentTime + Constants.LOING_EXPIRED_TIME;
-        cacheService.updateExpiredTime(getLoginName(username), exptectedExpiredTime);
-        String loginSeqName = getLoginSeqName(username);
-        cacheService.updateExpiredTime(loginSeqName, exptectedExpiredTime);
-        String loginTokenName = getLoginTokenName(username);
-        cacheService.updateExpiredTime(loginTokenName, exptectedExpiredTime);
-    }
-
-    private void updateLoginToken(String username, String newLoginToken) {
-        String loginName = getLoginTokenName(username);
-        cacheService.setValueByName(loginName, newLoginToken);
-    }
-
-    @Override
-    public boolean logout(String username) {
-        cacheService.removeName(username);
-        cacheService.removeName(getLoginSeqName(username));
-        cacheService.removeName(getLoginTokenName(username));
-        return true;
-    }
 }

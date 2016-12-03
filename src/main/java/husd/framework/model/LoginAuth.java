@@ -9,13 +9,23 @@ public class LoginAuth {
     private String username;
     private String loginSeq;
     private String loginToken;
+    private String ip;
 
     public LoginAuth() {}
 
-    public LoginAuth(String username, String loginSeq, String loginToken) {
+    public LoginAuth(String username, String loginSeq, String loginToken, String ip) {
         this.username = username;
         this.loginSeq = loginSeq;
         this.loginToken = loginToken;
+        this.ip = ip;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public String getUsername() {
@@ -55,9 +65,11 @@ public class LoginAuth {
                 && StringUtils.isNotBlank(loginToken)
                 && StringUtils.equals(username, other.getUsername())
                 && StringUtils.equals(loginSeq, other.getLoginSeq())
+                && StringUtils.equals(ip, other.getIp())
                 && StringUtils.equals(loginToken, other.getLoginToken());
     }
 
+    // 登陆时候如果token不一样或者ip不一样，则有可能是被盗了cookie的值。
     public boolean isPasswordMayBeStolen(LoginAuth other) {
         if (other == null) {
             return false;
@@ -66,7 +78,8 @@ public class LoginAuth {
                 && StringUtils.isNotBlank(loginToken)
                 && StringUtils.equals(username, other.getUsername())
                 && StringUtils.equals(loginSeq, other.getLoginSeq())
-                && !StringUtils.equals(loginToken, other.getLoginToken());
+                && (!StringUtils.equals(loginToken, other.getLoginToken())
+                        || !StringUtils.equals(ip, other.getIp()));
     }
 
 }

@@ -17,9 +17,9 @@ import husd.web.service.IDemoService;
  */
 @Controller
 @RequestMapping("/admin")
-public class DemoController extends BaseController {
+public class AdminController extends BaseController {
 
-    private Logger LOGGER = LoggerFactory.getLogger(DemoController.class);
+    private Logger LOGGER = LoggerFactory.getLogger(AdminController.class);
 
     @Autowired
     private IDemoService demoService;

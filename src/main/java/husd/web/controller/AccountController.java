@@ -32,6 +32,7 @@ public class AccountController extends BaseController {
     @RequestMapping("register")
     @ResponseBody
     public String register() {
+        // TODO 防止人撞库，1分钟内多次操作，必须要加验证码。
         return "account/reset_password";
     }
 

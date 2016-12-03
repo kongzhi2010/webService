@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import husd.framework.model.BooleanMessage;
+import husd.framework.model.LoginAuth;
 
 public interface ILoginService {
 
@@ -37,5 +38,7 @@ public interface ILoginService {
     public boolean isLoginUrl(HttpServletRequest request);
 
     public boolean logout(String username);
+
+    public LoginAuth getLoginAuthFromCookie(HttpServletRequest request);
 
 }
