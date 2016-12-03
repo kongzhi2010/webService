@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/account/manage")
 public class AccountController extends BaseController {
-
+    
     @RequestMapping("register/toPage")
     public String toRegisterPage() {
         return "account/register";

@@ -11,6 +11,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/admin/**" />
+			<mvc:mapping path="/user/profile/**" />
 			<mvc:exclude-mapping path="/static/css/**" />
 			<mvc:exclude-mapping path="/static/img/**" />
 			<mvc:exclude-mapping path="/static/js/**" />

@@ -17,7 +17,7 @@ function login() {
 			"password" : password
 		},
 		success : function(data) {
-			alert(data.msg);
+			bootbox.alert(data.msg);
 			if (data.succ) {
 				// 2秒之后转到首页
 				setTimeout(function() {

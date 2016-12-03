@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>我的网站</title>
-    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/common.css">
@@ -17,11 +16,19 @@
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="/static/js/common/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="/static/js/common/bootstrap.min.js"></script>
     <![endif]-->
+	<script src="/static/js/common/bootbox.min.js"></script>
 </head>
 
 <body>
+    <div style="position:absolute;left:40%;">
     $screen_content
-	#parse("/common/footer.vm")
+    </div>
+    #parse("/common/footer.vm")
 </body>
 </html>

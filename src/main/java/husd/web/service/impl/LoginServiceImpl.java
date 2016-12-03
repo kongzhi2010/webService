@@ -90,6 +90,7 @@ public class LoginServiceImpl implements ILoginService {
             String newJson = loginAuth.toJson();
             putLoginAuthIntoCache(username, newJson);
             putLoginInfoIntoCookie(response, newJson);
+            request.getSession(true).setAttribute("username", username);
             return true;
         }
         if (loginAuth.isPasswordMayBeStolen(loginAuthInCookie)) {

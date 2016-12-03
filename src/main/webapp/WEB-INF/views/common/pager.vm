@@ -42,4 +42,4 @@
         #end
     </ul>
 </div>
-<script src="/static/js/page.js"></script>
+<script src="/static/js/common/page.js"></script>

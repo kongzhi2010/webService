@@ -29,8 +29,8 @@ public class DemoService implements IDemoService {
     @Override
     public Pager<DemoResult> queryDemoResult(DemoCondition demoCondition) {
         // 1 先把总页数查询出来,然后做分页查询,注意total为0的情况.
-//        int count = demoDao.queryCount();
-//        LOGGER.info("test query count is :{}", count);
+        // int count = demoDao.queryCount();
+        // LOGGER.info("test query count is :{}", count);
         int total = queryTotalCount(demoCondition);
         if (total == 0) {
             return new Pager<DemoResult>();
