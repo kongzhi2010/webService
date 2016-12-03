@@ -3,7 +3,7 @@ package husd.web.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import husd.framework.BooleanMessage;
+import husd.framework.model.BooleanMessage;
 
 public interface ILoginService {
 
@@ -13,9 +13,29 @@ public interface ILoginService {
      * @param cookie
      * @return
      */
-    public boolean isLogin(HttpServletRequest request);
+    public boolean isLoginAndUpdateLoginInfoIfTrue(HttpServletRequest request,
+            HttpServletResponse response);
 
-    public BooleanMessage login(HttpServletResponse response, String userName, String password,
-            String verificationCode);
+    /**
+     * 登陆
+     * 
+     * @param response
+     * @param userName
+     * @param password
+     * @param verificationCode
+     * @return
+     */
+    public BooleanMessage login(HttpServletRequest request, HttpServletResponse response,
+            String userName, String password, String verificationCode);
+
+    /**
+     * 判断当前的url地址是否是登陆的URL
+     * 
+     * @param request
+     * @return
+     */
+    public boolean isLoginUrl(HttpServletRequest request);
+
+    public boolean logout(String username);
 
 }

@@ -12,7 +12,10 @@
 		<ds.version>0.0.0</ds.version>
 		<spring.version>3.2.16.RELEASE</spring.version>
 		<start-class>hello.Application</start-class>
-		<mysql.version>5.1.9</mysql.version>
+		<mysql.version>5.1.26</mysql.version>
+		<druid-version>1.0.9</druid-version>
+		<ibatis-version>2.3.4.726</ibatis-version>
+		<commons-email-version>1.2</commons-email-version>
 	</properties>
 
 	<dependencies>
@@ -92,6 +95,18 @@
 			<version>${mysql.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.ibatis</groupId>
+			<artifactId>ibatis-sqlmap</artifactId>
+			<version>${ibatis-version}</version>
+		</dependency>
+
 		<!--cglib -->
 		<dependency>
 			<groupId>cglib</groupId>
@@ -161,6 +176,14 @@
 			<version>1.4.1</version>
 		</dependency>
 
+		<!-- email -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>${commons-email-version}</version>
+		</dependency>
+
+		<!-- excel -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -190,12 +213,6 @@
 					<include>**/*.properties</include>
 				</includes>
 				<filtering>true</filtering>
-			</resource>
-			<resource>
-				<directory>src/main/java/husd/wsi/dao</directory>
-				<includes>
-					<include>*Mapper.xml</include>
-				</includes>
 			</resource>
 		</resources>
 

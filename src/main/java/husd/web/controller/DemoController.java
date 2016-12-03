@@ -16,7 +16,8 @@ import husd.web.service.IDemoService;
  * Created by hushengdong on 16/6/3.
  */
 @Controller
-public class DemoController {
+@RequestMapping("/admin")
+public class DemoController extends BaseController {
 
     private Logger LOGGER = LoggerFactory.getLogger(DemoController.class);
 
@@ -25,7 +26,7 @@ public class DemoController {
 
     @RequestMapping("/demo/apply")
     public String toDemoPage(DemoCondition demoCondition, ModelMap modelMap) {
-        LOGGER.info("1 controller get condition: " + demoCondition.toString());
+        LOGGER.info("[demo-apply]" + demoCondition.toString());
         // 这个是必须的,要把条件再传递过去.
         modelMap.addAttribute("condition", demoCondition);
         Pager<DemoResult> pager = demoService.queryDemoResult(demoCondition);

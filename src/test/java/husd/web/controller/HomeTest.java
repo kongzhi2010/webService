@@ -26,7 +26,7 @@ public class HomeTest {
 
 	@Test
 	public void testShowHomePage() {
-		Home home = new Home();
+		HomeController home = new HomeController();
 		Map<String, Object> model = new HashMap<String, Object>();
 		assertEquals("this is a demo", model.get("demo"));
 	}

@@ -1,21 +1,56 @@
 package husd.web.model;
 
-import java.io.Serializable;
+import java.util.Date;
 
-public class User implements Serializable {
+public class User {
 
+    private long id;
     private String username;
-
     private String password;
+    private String salt;
+    private Date createDate;
+    private String creator;
+    private Date updateDate;
+    private String updater;
 
-    private String email;
+    public long getId() {
+        return id;
+    }
 
-    public User() {}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-    public User(String username, String password, String email) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public String getUpdater() {
+        return updater;
+    }
+
+    public void setUpdater(String updater) {
+        this.updater = updater;
     }
 
     public String getUsername() {
@@ -34,18 +69,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
-
-    @Override
-    public String toString() {
-        return String.format("user detail is :username:%s,password:%s,email:%s", username, password,
-                email);
-    }
-
 }

@@ -1,18 +1,18 @@
 #set($layout="/common/layout_empty.vm")
 <div class="container" style="position:relative;top:40px;">
-
-      <form class="form-signin" role="form" action=""/login>
+	<input type="hidden" id="toUrl" name="toUrl" value="$!toUrl" />
+      <form class="form-signin" role="form" action="">
         <h2 class="form-signin-heading">请先登陆</h2>
-        <input type="email" style="width:30%" class="form-control" placeholder="请输入您的用户名" required autofocus>
+        <input id="username" type="text" style="width:30%" class="form-control" placeholder="请输入您的用户名" required autofocus>
         <br>
-        <input type="password" style="width:30%" class="form-control" placeholder="请输入您的密码" required>
+        <input id="password" type="password" style="width:30%" class="form-control" placeholder="请输入您的密码" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> 记住我
           </label>
         </div>
-        <button class="btn btn-primary" type="submit">登陆</button>
       </form>
+      <button class="btn btn-primary" type="submit" onclick="login()">登陆</button>
 
 </div> <!-- /container -->
 <script src="/static/js/login.js"></script>

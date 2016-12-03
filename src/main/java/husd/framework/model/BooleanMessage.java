@@ -1,4 +1,4 @@
-package husd.framework;
+package husd.framework.model;
 
 import com.google.gson.Gson;
 

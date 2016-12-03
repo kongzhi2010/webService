@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Audience {
 
-    private Logger logger = LoggerFactory.getLogger(Audience.class);
+    private Logger LOGGER = LoggerFactory.getLogger(Audience.class);
 
     public void takeSeats() {
         // logger.info("takeSeats");

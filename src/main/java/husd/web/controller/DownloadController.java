@@ -13,12 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import husd.framework.BooleanMessage;
+import husd.framework.model.BooleanMessage;
 import husd.framework.util.ExcelUtil;
 import husd.framework.util.FileUtil;
 
 @Controller
-public class DownloadController {
+public class DownloadController extends BaseController{
 
     private Logger LOGGER = LoggerFactory.getLogger(DownloadController.class);
 

@@ -3,7 +3,7 @@ function searchPage(pageNum, pagesize) {
     $(".select-pageSize").val(pagesize);
     $(".select-pageSize").find("option[value= " + pagesize + "]").attr("selected", true);
     $('#pageSize').val(pagesize);
-    $('#conditions_form').attr("action", "/demo/apply");
+    $('#conditions_form').attr("action", "/admin/demo/apply");
     $('#conditions_form').submit();
 }
 
