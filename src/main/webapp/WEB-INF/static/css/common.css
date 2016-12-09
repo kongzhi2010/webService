@@ -221,8 +221,7 @@ body {
     height: 100%;
     font-size: 14px;
     line-height: 160%;
-    color: #666;
-    background: url(bg.gif) repeat
+    backgroud-color:#eee;
 }
 
 body, input, button, select, textarea, h1, h2, h3, h4, h5, h6 {

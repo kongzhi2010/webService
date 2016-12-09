@@ -1,9 +1,11 @@
-<div class="jumbotron" style="margin-bottom:0px;">
-    <div class="container">
-        <h1>欢迎来到我的网站</h1>
+<div class="jumbotron" style="margin-bottom: 0px;">
+	<div class="container">
+		<h1>欢迎来到我的网站</h1>
 
-        <p>这里是对我的网站的介绍,仅仅是用于对前端学习的一个简单网站,没有太多的内容.</p>
+		<p>这里是对我的网站的介绍,仅仅是用于对前端学习的一个简单网站,没有太多的内容.</p>
 
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">更多</a></p>
-    </div>
+		<p>
+			<a class="btn btn-primary btn-lg" href="#" role="button">更多</a>
+		</p>
+	</div>
 </div>

@@ -1,46 +1,47 @@
 <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">首页</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/admin/demo/apply">示例页面</a></li>
-            <li><a href="#about">菜单哈哈哈</a></li>
-            <li><a href="#contact">另外一个菜单</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">菜单1 <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">选项1</a></li>
-                <li><a href="#">选项2</a></li>
-                <li><a href="#">选项3</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">选项4</li>
-                <li><a href="#">选项5</a></li>
-                <li><a href="#">选项6</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-          	#if("$!username" == "")
-            	<li><a href="/login/toLogin/page">登陆</a></li>
-            #else
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">$!username</a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="/user/profile/toPage">个人资料</a></li>
-                <li><a href="/user/profile/logout">注销</a></li>
-              </ul>
-            </li>
-            #end
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">首页</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="/admin/demo/apply">示例页面</a></li>
+				<li><a href="#about">菜单哈哈哈</a></li>
+				<li><a href="#contact">另外一个菜单</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">菜单1 <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">选项1</a></li>
+						<li><a href="#">选项2</a></li>
+						<li><a href="#">选项3</a></li>
+						<li class="divider"></li>
+						<li class="dropdown-header">选项4</li>
+						<li><a href="#">选项5</a></li>
+						<li><a href="#">选项6</a></li>
+					</ul></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				#if("$!username" == "")
+				<li><a href="/login/toLogin/page">登陆</a></li> 
+				#else
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">$!username</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/user/profile/toPage">个人资料</a></li>
+						<li><a href="/user/profile/logout">注销</a></li>
+					</ul>
+				</li> 
+				#end
+			</ul>
+		</div>
+		<!--/.nav-collapse -->
+	</div>
 </nav>

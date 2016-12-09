@@ -2,7 +2,6 @@ package husd.web.dao;
 
 import java.util.List;
 
-import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
 import husd.web.model.User;

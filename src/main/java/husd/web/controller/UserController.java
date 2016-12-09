@@ -1,6 +1,9 @@
 package husd.web.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,9 +22,11 @@ public class UserController extends BaseController {
     }
 
     @RequestMapping("logout")
-    public String logout(HttpServletRequest request, ModelMap modelMap) {
+    public String logout(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap)
+            throws IOException {
         String username = getCurrentUsername(request);
         loginService.logout(username);
-        return "login";
+        response.sendRedirect("/login/toLogin/page");
+        return null;
     }
 }

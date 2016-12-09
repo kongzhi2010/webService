@@ -1,5 +1,7 @@
 package husd.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,15 +12,9 @@ import husd.web.model.UserProfile;
 public class HomeController extends BaseController {
 
     @RequestMapping({"/", "/home"})
-    public String showHomePage(ModelMap modelMap) {
-        modelMap.addAttribute("a1", "a1");
-        Integer[] arr = {1, 2, 3, 4, 5};
-        UserProfile user = new UserProfile();
-        user.setEmail("shengdonghu@126.com");
-        user.setUsername("hushengdong");
-        user.setPassword("213");
-        modelMap.addAttribute("arr", arr);
-        modelMap.addAttribute("user", user);
+    public String showHomePage(ModelMap modelMap, HttpServletRequest request) {
+        String username = super.getCurrentUsername(request);
+        modelMap.addAttribute("username", username);
         return "home";
     }
 

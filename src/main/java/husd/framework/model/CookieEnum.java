@@ -2,10 +2,8 @@ package husd.framework.model;
 
 public enum CookieEnum {
 
-    USER_NAME("_uc_name", "用户名"),
-    USER_LOGIN_SEQ("_uc_login_seq", "用户登陆序列"),
-    USER_LOGIN_TOKEN("_uc_login_token", "用户登陆cookie"),
-    USER_COOKIE("_uc", "判断是否登陆的cookie");
+    USER_NAME("_uc_name", "用户名"), USER_LOGIN_SEQ("_uc_login_seq", "用户登陆序列"), USER_LOGIN_TOKEN(
+            "_uc_login_token", "用户登陆cookie"), USER_COOKIE("_uc", "判断是否登陆的cookie");
 
     private CookieEnum(String name, String msg) {
         this.name = name;

@@ -1,6 +1,5 @@
 package husd.web.dao;
 
-import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
 @SuppressWarnings({"deprecation", "unused"})

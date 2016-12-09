@@ -83,13 +83,7 @@ public class LoginServiceImpl implements ILoginService {
         }
         LoginAuth loginAuth = gson.fromJson(json, LoginAuth.class);
         if (loginAuth.equalsWithAnother(loginAuthInCookie)) {
-            // 登陆成功之后，更新cookie和缓存里面的loginToken。
-            // 更新过期时间
-            String newLoginToken = createLoginToken(username, loginAuth.getLoginToken());
-            loginAuth.setLoginToken(newLoginToken);
-            String newJson = loginAuth.toJson();
-            putLoginAuthIntoCache(username, newJson);
-            putLoginInfoIntoCookie(response, newJson);
+            updateLoginToken(username, loginAuth, response);
             request.getSession(true).setAttribute("username", username);
             return true;
         }
@@ -103,9 +97,6 @@ public class LoginServiceImpl implements ILoginService {
     @Override
     public BooleanMessage login(HttpServletRequest request, HttpServletResponse response,
             String username, String password, String verificationCode) {
-        // 思考下登陆系统需要干什么事
-        // 思考下防止频繁访问的系统应该放在什么地方
-        // 1、如果已经登陆了，就直接返回成功，不需要判断了。
         if (isLoginAndUpdateLoginInfoIfTrue(request, response)) {
             return new BooleanMessage(true, "您当前已经是登陆状态，无需重复登陆！");
         }
@@ -224,4 +215,13 @@ public class LoginServiceImpl implements ILoginService {
         return username + "@" + CookieEnum.USER_NAME.getName();
     }
 
+    // 每一个登陆成功之后，都要更新loginToken。
+    private void updateLoginToken(String username, LoginAuth loginAuth,
+            HttpServletResponse response) {
+        String newLoginToken = createLoginToken(username, loginAuth.getLoginToken());
+        loginAuth.setLoginToken(newLoginToken);
+        String newJson = loginAuth.toJson();
+        putLoginAuthIntoCache(username, newJson);
+        putLoginInfoIntoCookie(response, newJson);
+    }
 }

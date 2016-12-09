@@ -1,5 +1,78 @@
-<div class="container" style="margin-top:50px;">
+<link rel="stylesheet" href="/static/css/home.css">
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<img src="/static/img/home/carousel0.jpg" alt="First slide">
+			<div class="carousel-caption">
+				<h1>Some Day you will meet Someone.</h1>
+				<p>Long Long ago ,There is a man named nobody!</p>
+				<p>
+					<a class="btn btn-lg btn-primary" href="#" role="button">Want
+						More</a>
+				</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/static/img/home/carousel1.jpg" alt="Second slide">
+		</div>
+		<div class="item">
+			<img src="/static/img/home/carousel2.jpg" alt="Third slide">
+		</div>
+		<div class="item">
+			<img src="/static/img/home/carousel3.jpg" alt="Fourth slide">
+		</div>
+	</div>
+	<!-- Indicators -->
+	<ol class="carousel-indicators carousel_bottom">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+	</ol>
+</div>
+<!-- /.carousel -->
 
-    <h4 class="_h_center"> 这个是网站的首页 ! </h4>
+<div class="home">
+	<a href="/" target="_blank"
+		style="width: 100%; display: block; background-color: #fef6e9; text-align: center">
+		<img src="/static/img/home/producthunt.jpg"
+		style="width: 1200px; max-width: 100%; margin: 0 auto;">
+	</a>
+	<div class="section homepage__page homepage__page--themeable">
+		<div class="homepage__pageinner">
+			<h1 style="margin: 40px 0;">主题2</h1>
+			<h2>主题2的内容</h2>
+			<div style="text-align: center;">
+				<img /home src="/static/img/home/pretty.jpg"
+					style="min-width: 600px; width: 100%; max-width: 900px;">
+			</div>
+		</div>
+	</div>
+	<div class="section homepage__page homepage__page--smart">
+		<div class="homepage__pageinner">
+			<h1 style="margin: 40px 0;">主题3</h1>
+			<h2>主题3的内容</h2>
+		</div>
+	</div>
+
+	<div class="section homepage__page homepage__page--zapier">
+		<div class="homepage__pageinner">
+			<img /home src="/static/img/home/zapier.png" width="150px" />
+			<h1 style="margin-bottom: 40px;">主题4</h1>
+			<h2>主题4的内容</h2>
+		</div>
+	</div>
+
+	<div class="section homepage__page homepage__page--stripe">
+		<div class="homepage__pageinner">
+			<img /home src="/static/img/home/stripe__logo--blue.png"
+				width="150px" />
+			<h1 style="margin-bottom: 40px;">主题5.</h1>
+			<h2>这个是主题5的一些个介绍</h2>
+		</div>
+	</div>
 
 </div>
+<script src="/static/js/home/home.js"></script>

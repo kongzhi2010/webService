@@ -18,7 +18,7 @@ import husd.framework.util.ExcelUtil;
 import husd.framework.util.FileUtil;
 
 @Controller
-public class DownloadController extends BaseController{
+public class DownloadController extends BaseController {
 
     private Logger LOGGER = LoggerFactory.getLogger(DownloadController.class);
 
