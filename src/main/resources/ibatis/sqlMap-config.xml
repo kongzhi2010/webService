@@ -6,7 +6,6 @@ Config 2.0/" "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
 		lazyLoadingEnabled="false" errorTracingEnabled="true"
 		useStatementNamespaces="true" />
 
-	<sqlMap resource="ibatis/sqlmap/demoSqlMap.xml" />
 	<sqlMap resource="ibatis/sqlmap/userSqlMap.xml" />
 
 </sqlMapConfig>

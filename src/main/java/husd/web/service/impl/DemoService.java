@@ -6,10 +6,8 @@ import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import husd.web.dao.DemoDao;
 import husd.web.model.DemoCondition;
 import husd.web.model.DemoResult;
 import husd.web.model.Pager;
@@ -22,9 +20,6 @@ import husd.web.service.IDemoService;
 public class DemoService implements IDemoService {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(DemoService.class);
-
-    @Autowired
-    private DemoDao demoDao;
 
     @Override
     public Pager<DemoResult> queryDemoResult(DemoCondition demoCondition) {
