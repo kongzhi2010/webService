@@ -1,0 +1,23 @@
+.block_head {
+	min-height: 400px;
+	position: relative;
+}
+
+.block_bottom {
+	position: relative;
+	bottom: 5px;
+}
+
+.logotext a {
+	font-weight: 500;
+	color: #fff;
+	font-size: 64px;
+	height: 100px;
+	line-height: 200px;
+}
+
+.block_img {
+	overflow: hidden;
+	position: relative;
+	margin-right: 10px;
+}

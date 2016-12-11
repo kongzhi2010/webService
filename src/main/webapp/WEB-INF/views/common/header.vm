@@ -1,3 +1,4 @@
+<link ref="stylesheet" href="/static/css/header.css">
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -13,9 +14,9 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="/admin/demo/apply">示例页面</a></li>
-				<li><a href="#about">菜单哈哈哈</a></li>
-				<li><a href="#contact">另外一个菜单</a></li>
+				<li><a href="/admin/demo/apply">后台管理</a></li>
+				<li><a href="/demo/page/block">块状布局</a></li>
+				<li><a href="/demo/page/charts">图表</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">菜单1 <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">

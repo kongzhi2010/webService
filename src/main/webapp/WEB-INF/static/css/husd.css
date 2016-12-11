@@ -1,3 +1,19 @@
-._h_center {
-    text-align: center;
+.text-center {
+	text-align: center;
+}
+
+.margin-top30 {
+	margin-top: 30px;
+}
+
+.margin-top50 {
+	margin-top: 50px;
+}
+
+.margin-top60 {
+	margin-top: 60px;
+}
+
+.margin-top90 {
+	margin-top: 90px;
 }

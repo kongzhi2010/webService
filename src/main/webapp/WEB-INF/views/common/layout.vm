@@ -29,7 +29,7 @@
 
 <body style="font-family:Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;">
 	<div>#parse("/common/header.vm")</div>
-	<div style="margin-top: 50px">$screen_content</div>
+	<div class="margin-top50">$screen_content</div>
 	<div>#parse("/common/footer.vm")</div>
 </body>
 

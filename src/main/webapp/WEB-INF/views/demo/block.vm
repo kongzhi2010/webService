@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/static/css/demo/block.css">
+<div class="block_head"
+	style="background-image: url(http://static.bootcss.com/expo/img/d/dd/2de797545de56274f03a5920eb3a1.jpg)">
+	<div class="container text-center">
+		<div class="row">
+			<div class="logotext col-xs-12">
+				<div>
+					<h1>
+						<a href="/">Main Title</a>
+					</h1>
+				</div>
+				<h2>
+					副标题<span>这里是副标题内容</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="margin-top90">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-sm-12 col-md-6">
+				<div class="thumbnail">
+					<a herf="www.baidu.com"> <img src="/static/img/block/myweb.jpg" alt="">
+					</a>
+					<div class="caption">
+						<h3>内容介绍</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="thumbnail">
+					<img src="/static/img/block/myweb.jpg" alt="...">
+					<div class="caption">
+						<h3>内容介绍</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="thumbnail">
+					<img src="/static/img/block/myweb.jpg" alt="...">
+					<div class="caption">
+						<h3>内容介绍</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="thumbnail">
+					<img src="/static/img/block/myweb.jpg" alt="...">
+					<div class="caption">
+						<h3>内容介绍</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="thumbnail">
+					<img src="/static/img/block/myweb.jpg" alt="...">
+					<div class="caption">
+						<h3>内容介绍</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="thumbnail">
+					<img src="/static/img/block/myweb.jpg" alt="...">
+					<div class="caption">
+						<h3>内容介绍</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

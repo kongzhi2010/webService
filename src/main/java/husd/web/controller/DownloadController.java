@@ -18,6 +18,7 @@ import husd.framework.util.ExcelUtil;
 import husd.framework.util.FileUtil;
 
 @Controller
+@RequestMapping("/download/excel")
 public class DownloadController extends BaseController {
 
     private Logger LOGGER = LoggerFactory.getLogger(DownloadController.class);
