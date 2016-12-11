@@ -11,43 +11,45 @@
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <!-- <link rel="stylesheet" href="/static/css/common.css">
  -->
+<link rel="stylesheet" href="/static/css/dashboard.css">
 <link rel="stylesheet" href="/static/css/husd.css">
 <link rel="stylesheet" href="/static/css/footer.css">
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="/static/js/common/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="/static/js/common/bootstrap.min.js"></script>
+<![endif]-->
+<script src="/static/js/common/bootbox.min.js"></script>
+<script src="/static/js/common/docs.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/static/js/common/ie10-viewport-bug-workaround.js"></script>
+<script src="/static/js/common/layout.js"></script>
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Project name</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Dashboard</a></li>
-					<li><a href="#">Settings</a></li>
-					<li><a href="#">Profile</a></li>
-					<li><a href="#">Help</a></li>
-				</ul>
-				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-	</nav>
-
+	#parse("/common/header.vm")
+	<!-- 这里是左边的菜单栏目 -->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#">Overview</a></li>
-					<li><a href="#">Reports</a></li>
+			<div id="web-sidebar-whole-id"
+				class="col-sm-2 col-md-2 sidebar box-shadow">
+				<ul class="nav nav-sidebar bordered-grey margin-bottom1">
+					<li><a data-toggle="collapse" href="#collapseOne"
+						aria-controls="collapseOne">系统管理 &gt;</a></li>
+				</ul>
+				<ul id="collapseOne" class="nav nav-sidebar collapse">
+					<li class=""><a href="/admin/demo/apply">管理链接1</a></li>
+				</ul>
+				<ul class="nav nav-sidebar bordered-grey">
+					<li><a href="/home">预览</a></li>
 					<li><a href="#">Analytics</a></li>
 					<li><a href="#">Export</a></li>
 				</ul>
@@ -64,26 +66,9 @@
 					<li><a href="">Another nav item</a></li>
 				</ul>
 			</div>
-			<div class="margin-top50">$screen_content</div>
+			<div class="col-sm-10 col-md-10 main">$screen_content</div>
 		</div>
 	</div>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="/static/js/common/jquery.min.js"></script>
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="/static/js/common/bootstrap.min.js"></script>
-	<![endif]-->
-	<script src="/static/js/common/bootbox.min.js"></script>
-	<script src="../../assets/js/docs.min.js"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	#parse("/common/footer.vm")
 </body>
 </html>

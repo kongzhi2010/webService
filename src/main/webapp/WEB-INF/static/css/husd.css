@@ -1,5 +1,13 @@
+body {
+	font: 12px "Microsoft Yahei";
+}
+
 .text-center {
 	text-align: center;
+}
+
+.margin-top20 {
+	margin-top: 20px;
 }
 
 .margin-top30 {
@@ -16,4 +24,85 @@
 
 .margin-top90 {
 	margin-top: 90px;
+}
+
+.margin-bottom1 {
+	margin-bottom: 1px;
+}
+
+.box-shadow {
+	box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+}
+
+.drop-body {
+	border: 1px;
+	solid: #ddd;
+	border-top: none;
+	position: relative;
+	background-color: #fafafa;
+}
+
+.panel-default {
+	border: none
+}
+
+.bordered-blue {
+	border-bottom: 3px solid #48a7e7 !important
+}
+
+.bordered-grey {
+	border-bottom: #eee !important
+}
+
+.angle-right:before {
+	float: right !important;
+	content: "\f105";
+}
+
+.angle-down:before {
+	content: "\f103";
+}
+
+.bordered-blue .panel-title {
+	color: #48a7e7 !important
+}
+
+.bordered-themesecondary {
+	border-bottom: 3px solid #fb6e52 !important
+}
+
+.bordered-themesecondary .panel-title {
+	color: #fb6e52 !important
+}
+
+.bordered-palegreen {
+	border-bottom: 3px solid #a0d468 !important
+}
+
+.bordered-palegreen .panel-title {
+	color: #a0d468 !important
+}
+
+.panel-default>.panel-heading {
+	background-color: #fff;
+	border-color: transparent
+}
+
+.panel-heading {
+	position: relative;
+	background-color: #fafafa;
+	border: none;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+	border-bottom: 3px solid #fff;
+	padding: 8px 15px
+}
+
+.panel-body {
+	background-color: #fff;
+	padding: 10px;
+	box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3)
+}
+
+.panel-title {
+	font-size: 12px
 }

@@ -73,8 +73,7 @@ public class LoginServiceImpl implements ILoginService {
     private ICacheService cacheService;
 
     @Override
-    public boolean isLoginAndUpdateLoginInfoIfTrue(HttpServletRequest request,
-            HttpServletResponse response) {
+    public boolean isLoginAndUpdateLoginInfoIfTrue(HttpServletRequest request, HttpServletResponse response) {
         LoginAuth loginAuthInCookie = getLoginAuthFromCookie(request);
         String username = loginAuthInCookie.getUsername();
         String json = cacheService.getValueByName(getLoginName(username));
@@ -95,8 +94,8 @@ public class LoginServiceImpl implements ILoginService {
 
 
     @Override
-    public BooleanMessage login(HttpServletRequest request, HttpServletResponse response,
-            String username, String password, String verificationCode) {
+    public BooleanMessage login(HttpServletRequest request, HttpServletResponse response, String username,
+            String password, String verificationCode) {
         if (isLoginAndUpdateLoginInfoIfTrue(request, response)) {
             return new BooleanMessage(true, "您当前已经是登陆状态，无需重复登陆！");
         }
@@ -126,7 +125,7 @@ public class LoginServiceImpl implements ILoginService {
     @Override
     public boolean isLoginUrl(HttpServletRequest request) {
         String currentUrl = request.getRequestURI();
-        return currentUrl != null && currentUrl.startsWith("login");
+        return currentUrl != null && (currentUrl.startsWith("login") || currentUrl.startsWith("/login"));
     }
 
     @Override
@@ -174,8 +173,7 @@ public class LoginServiceImpl implements ILoginService {
         return userList.get(0);
     }
 
-    private void recordLoginInfo(User user, HttpServletRequest request,
-            HttpServletResponse response) {
+    private void recordLoginInfo(User user, HttpServletRequest request, HttpServletResponse response) {
         // 这个方法是登陆系统的关键，我们怎么标示这个用户已经登陆了，要防止别人窃取了cookie之后
         // 可以异地登陆用户的账号。
         String username = user.getUsername();
@@ -194,8 +192,7 @@ public class LoginServiceImpl implements ILoginService {
     }
 
     private void putLoginInfoIntoCookie(HttpServletResponse response, String json) {
-        CookieUtil.setCookie(response, CookieEnum.USER_NAME.getName(), json,
-                Constants.LOING_EXPIRED_TIME);
+        CookieUtil.setCookie(response, CookieEnum.USER_NAME.getName(), json, Constants.LOING_EXPIRED_TIME);
     }
 
     private String createLoginToken(String username, String salt) {
@@ -216,8 +213,7 @@ public class LoginServiceImpl implements ILoginService {
     }
 
     // 每一个登陆成功之后，都要更新loginToken。
-    private void updateLoginToken(String username, LoginAuth loginAuth,
-            HttpServletResponse response) {
+    private void updateLoginToken(String username, LoginAuth loginAuth, HttpServletResponse response) {
         String newLoginToken = createLoginToken(username, loginAuth.getLoginToken());
         loginAuth.setLoginToken(newLoginToken);
         String newJson = loginAuth.toJson();

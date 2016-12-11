@@ -15,7 +15,7 @@ public class HomeController extends BaseController {
     public String showHomePage(ModelMap modelMap, HttpServletRequest request) {
         String username = super.getCurrentUsername(request);
         modelMap.addAttribute("username", username);
-        return "home";
+        return "overview";
     }
 
     @RequestMapping("/about")

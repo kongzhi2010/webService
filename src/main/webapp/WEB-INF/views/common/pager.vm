@@ -9,9 +9,15 @@
     </div>
 
     <ul class="pagination" style="margin:0 0;">
-        <li class="disabled">
-            <a href="#">共  $!pager.pages 页，共  $!pager.total 条记录</a>
-        </li>
+    	#if("$!pager.total" == "")
+        	<li class="disabled">
+            	<a href="#">共0页，共0条记录</a>
+        	</li>
+        #else
+        	<li class="disabled">
+            	<a href="#">共  $!pager.pages 页，共  $!pager.total 条记录</a>
+        	</li>
+        #end
 
         #if($!pager.pages != 0)
             #set($nextPage = $pager.pageNumber + 1)
