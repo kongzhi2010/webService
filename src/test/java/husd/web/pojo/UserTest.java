@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import husd.web.model.UserProfile;
+import com.husd.web.model.UserProfile;
 
 public class UserTest {
 

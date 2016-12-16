@@ -46,7 +46,8 @@
 						aria-controls="collapseOne">系统管理 &gt;</a></li>
 				</ul>
 				<ul id="collapseOne" class="nav nav-sidebar collapse">
-					<li class=""><a href="/admin/demo/apply">管理链接1</a></li>
+					<li style ="text-decoration: underline " class=""><a href="/admin/demo/apply">管理链接1</a></li>
+					<li style ="text-decoration: underline " class=""><a href="/admin/demo/apply">管理链接2</a></li>
 				</ul>
 				<ul class="nav nav-sidebar bordered-grey">
 					<li><a href="/home">预览</a></li>

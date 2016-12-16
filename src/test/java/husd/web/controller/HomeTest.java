@@ -12,6 +12,8 @@ import org.junit.internal.runners.JUnit4ClassRunner;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 
+import com.husd.web.controller.HomeController;
+
 @RunWith(JUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-mvc.xml")
 public class HomeTest {
