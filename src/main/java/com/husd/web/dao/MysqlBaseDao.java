@@ -6,7 +6,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 @SuppressWarnings("deprecation")
 public class MysqlBaseDao {
 
-    @Autowired
+    @Autowired(required = false)
     protected SqlMapClientTemplate write = null;
 
     public void setWrite(SqlMapClientTemplate write) {

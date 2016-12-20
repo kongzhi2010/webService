@@ -10,7 +10,7 @@
        	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 	<mvc:annotation-driven />
-	<context:component-scan base-package='husd' />
+	<context:component-scan base-package='com.husd' />
 
 	<bean id="propertyConfigure"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -23,8 +23,8 @@
 
 	<import resource="classpath:spring-aop.xml" />
 	<import resource="classpath:spring-interceptor.xml" />
- 	<import resource="classpath:spring-mysql.xml" />
-	<mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
+<!--  	<import resource="classpath:spring-mysql.xml" />
+ -->	<mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
 
 	<bean id="velocityConfig"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
