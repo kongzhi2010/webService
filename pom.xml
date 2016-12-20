@@ -3,7 +3,7 @@
 	 					http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>husd</groupId>
+	<groupId>com.husd</groupId>
 	<artifactId>webService</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
@@ -15,10 +15,16 @@
 		<mysql.version>5.1.26</mysql.version>
 		<druid-version>1.0.9</druid-version>
 		<ibatis-version>2.3.4.726</ibatis-version>
-		<commons-email-version>1.2</commons-email-version>
+		<com.husd.framework.version>0.0.1-SNAPSHOT</com.husd.framework.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.husd</groupId>
+			<artifactId>framework</artifactId>
+			<version>${com.husd.framework.version}</version>
+		</dependency>
+
 		<!-- spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -128,22 +134,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- log4j -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.21</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.21</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-		</dependency>
 
 		<dependency>
 			<groupId>velocity</groupId>
@@ -162,44 +152,6 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4.1</version>
-		</dependency>
-
-		<!-- email -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-email</artifactId>
-			<version>${commons-email-version}</version>
-		</dependency>
-
-		<!-- excel -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>3.7</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>3.1</version>
 		</dependency>
 
 	</dependencies>
