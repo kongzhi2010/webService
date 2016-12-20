@@ -6,9 +6,10 @@
      http://www.springframework.org/schema/aop
      http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<bean id="audience" class="com.husd.web.service.Audience"></bean>
 	<aop:config>
 		<aop:aspect ref="audience">
-			<aop:pointcut id="audience-aop" expression="execution(* husd.web.controller.HomeController.showHomePage(..))"/>
+			<aop:pointcut id="audience-aop" expression="execution(* com.husd.web.controller.HomeController.showHomePage(..))"/>
 			<aop:before pointcut-ref="audience-aop" method="takeSeats" />
 			<aop:before pointcut-ref="audience-aop" method="turnOffCellPhone" />
 			<aop:after-returning pointcut-ref="audience-aop" method="standUp" />
