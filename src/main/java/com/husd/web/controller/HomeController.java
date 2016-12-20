@@ -6,8 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.husd.web.model.UserProfile;
-
 @Controller
 public class HomeController extends BaseController {
 

@@ -44,8 +44,7 @@ public class UserProfile implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("user detail is :username:%s,password:%s,email:%s", username, password,
-                email);
+        return String.format("user detail is :username:%s,password:%s,email:%s", username, password, email);
     }
 
 }

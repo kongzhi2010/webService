@@ -9,18 +9,22 @@ public class DemoCondition extends BasePager {
 
     private String batchCode;
 
+    @Override
     public int getStart() {
         return start;
     }
 
+    @Override
     public void setStart(int start) {
         this.start = start;
     }
 
+    @Override
     public int getPageSize() {
         return pageSize;
     }
 
+    @Override
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
@@ -43,7 +47,6 @@ public class DemoCondition extends BasePager {
 
     @Override
     public String toString() {
-        return "DemoCondition{" + "productId=" + productId + ", batchCode='" + batchCode + '\''
-                + '}';
+        return "DemoCondition{" + "productId=" + productId + ", batchCode='" + batchCode + '\'' + '}';
     }
 }

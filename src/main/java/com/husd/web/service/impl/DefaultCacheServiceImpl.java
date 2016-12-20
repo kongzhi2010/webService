@@ -20,8 +20,7 @@ import com.husd.web.service.ICacheService;
 @Service(value = "cacheService")
 public class DefaultCacheServiceImpl implements ICacheService {
 
-    private final static Map<String, DefaultCacheValue> cache =
-            new ConcurrentHashMap<String, DefaultCacheValue>(32);
+    private final static Map<String, DefaultCacheValue> cache = new ConcurrentHashMap<String, DefaultCacheValue>(32);
 
     private Logger LOGGER = LoggerFactory.getLogger(DefaultCacheServiceImpl.class);
 

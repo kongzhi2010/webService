@@ -21,16 +21,15 @@ public class LoginInterceptor implements HandlerInterceptor {
     private ILoginService loginService;
 
     @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
-            Object obj, Exception exception) throws Exception {}
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object obj,
+            Exception exception) throws Exception {}
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object obj,
             ModelAndView modelAndView) throws Exception {}
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj)
-            throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {
         if (loginService.isLoginUrl(request)) {
             return true;
         }

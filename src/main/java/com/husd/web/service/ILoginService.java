@@ -14,8 +14,7 @@ public interface ILoginService {
      * @param cookie
      * @return
      */
-    public boolean isLoginAndUpdateLoginInfoIfTrue(HttpServletRequest request,
-            HttpServletResponse response);
+    public boolean isLoginAndUpdateLoginInfoIfTrue(HttpServletRequest request, HttpServletResponse response);
 
     /**
      * 登陆
@@ -26,8 +25,8 @@ public interface ILoginService {
      * @param verificationCode
      * @return
      */
-    public BooleanMessage login(HttpServletRequest request, HttpServletResponse response,
-            String userName, String password, String verificationCode);
+    public BooleanMessage login(HttpServletRequest request, HttpServletResponse response, String userName,
+            String password, String verificationCode);
 
     /**
      * 判断当前的url地址是否是登陆的URL

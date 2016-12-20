@@ -22,8 +22,8 @@ public class LoginController extends BaseController {
     private Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping("/toLogin/page")
-    public String toLogin(String toUrl, HttpServletRequest request, HttpServletResponse response,
-            ModelMap modelMap) throws IOException {
+    public String toLogin(String toUrl, HttpServletRequest request, HttpServletResponse response, ModelMap modelMap)
+            throws IOException {
         LOGGER.info("[login-toLogin] toUrl is: {}", toUrl);
         if (loginService.isLoginAndUpdateLoginInfoIfTrue(request, response)) {
             // 不知道该转向哪里或者本身就还是登陆页面的url，直接转向主页。
@@ -40,12 +40,11 @@ public class LoginController extends BaseController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public String login(String toUrl, HttpServletRequest request, HttpServletResponse response,
-            ModelMap modelMap, String username, String password, String verificationCode) {
+    public String login(String toUrl, HttpServletRequest request, HttpServletResponse response, ModelMap modelMap,
+            String username, String password, String verificationCode) {
         LOGGER.info("[login-login] username is: {} ,toUrl is: {}", username, toUrl);
         response.setHeader("Content-type", "text/html;charset=UTF-8");
-        BooleanMessage succ =
-                loginService.login(request, response, username, password, verificationCode);
+        BooleanMessage succ = loginService.login(request, response, username, password, verificationCode);
         writeBackJson(response, succ.toJson());
         return null;
     }
