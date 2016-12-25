@@ -6,7 +6,7 @@
 		<input id="pageSize" name="pageSize" type="hidden"
 			value="$!condition.pageSize" />
 
-		<div class="row from-group" style="margin-bottom: 25px;">
+		<div class="row from-group" style="margin-bottom: 3px;">
 			<label class="col-xs-2 control-label" for="productId">商品编码:</label>
 
 			<div class="col-xs-3">

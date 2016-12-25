@@ -1,10 +1,10 @@
 <div class="pull-right" style="margin-top:3px;">
     <div class="pull-left" style="margin-right:5px;">每页
         <select class="input-sm select-pageSize" style="width:100px;" id="pageSize">
-            <option value="10" #if($!pager.limit ==10)selected #end>10</option>
-            <option value="20" #if($!pager.limit ==20)selected #end>20</option>
-            <option value="50" #if($!pager.limit ==50)selected #end>50</option>
-            <option value="100" #if($!pager.limit ==100)selected #end>100</option>
+            <option value="10" #if('$!pager.limit' == '10')selected #end>10</option>
+            <option value="20" #if('$!pager.limit' == '20')selected #end>20</option>
+            <option value="50" #if('$!pager.limit' == '50')selected #end>50</option>
+            <option value="100" #if('$!pager.limit' == '100')selected #end>100</option>
         </select>
     </div>
 
@@ -19,7 +19,7 @@
         	</li>
         #end
 
-        #if($!pager.pages != 0)
+        #if('$!pager.pages' == '' && $!pager.pages != 0)
             #set($nextPage = $pager.pageNumber + 1)
             #set($beforePage = $pager.pageNumber - 1)
             #set($twoAfter = $pager.pageNumber + 2)
