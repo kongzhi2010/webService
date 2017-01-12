@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import com.google.gson.Gson;
+import com.husd.framework.cache.ICacheService;
 import com.husd.framework.model.BooleanMessage;
 import com.husd.framework.model.Constants;
 import com.husd.framework.model.CookieEnum;
@@ -24,7 +25,6 @@ import com.husd.framework.util.HttpUtil;
 import com.husd.framework.util.Md5Util;
 import com.husd.web.dao.UserDao;
 import com.husd.web.model.User;
-import com.husd.web.service.ICacheService;
 import com.husd.web.service.ILoginService;
 
 /**
@@ -186,7 +186,6 @@ public class LoginServiceImpl implements ILoginService {
     }
 
     private void putLoginAuthIntoCache(String username, String json) {
-        ICacheService cacheService = new DefaultCacheServiceImpl();
         cacheService.setValueByName(getLoginName(username), json, Constants.LOING_EXPIRED_TIME);
     }
 
